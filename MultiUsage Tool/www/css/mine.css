@@ -1,0 +1,115 @@
+body,
+body * {
+  box-sizing: border-box;
+}
+
+.game-board {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  font-size: 0;
+  font-family: Courier, monospace;
+  border: solid 2px #000;
+}
+
+.message {
+  position: absolute;
+  top: 100%;
+  right: -2px;
+  left: -2px;
+  border: solid 2px #000;
+  border-top: none;
+  font-size: 1rem;
+  color: #FFF;
+  text-align: center;
+}
+
+.message::before {
+  display: block;
+  font-size: 3rem;
+}
+
+.game-board label {
+  position: relative;
+  display: inline-block;
+  width: calc(100% / 3);
+  height: calc(100% / 3);
+  border: solid 2px #000;
+  border-top: none;
+  border-left: none;
+  background-color: gray;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.game-board label:nth-of-type(3n+3) {
+  border-right: none;
+}
+
+.game-board label:nth-last-of-type(-n+3) {
+  border-bottom: none;
+}
+
+.game-board label:active {
+  background-color: #3469B4;
+  box-shadow: inset 0px 0px 7px 0px #000;
+}
+
+.game-board input[type="checkbox"] {
+  display: none;
+}
+
+.game-board input[type="checkbox"]:checked + label {
+  background-color: lightgray;
+  pointer-events: none;
+}
+
+.game-board input[type="checkbox"].mine:checked + label {
+  background-image: url("http://www.rw-designer.com/icon-image/3078-256x256x32.png");
+  background-size: 75% auto;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.game-board input[type="checkbox"].prox:checked + label::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+.game-board input[type="checkbox"].prox.one:checked + label::before {
+  content: "1";
+  color: blue;
+}
+
+.game-board input[type="checkbox"].prox.two:checked + label::before {
+  content: "2";
+  color: green;
+}
+
+.game-board input[type="checkbox"].mine:checked ~ .message,
+.game-board input[type="checkbox"]:not(.mine):checked ~ input[type="checkbox"]:not(.mine):checked ~ input[type="checkbox"]:not(.mine):checked ~ input[type="checkbox"]:not(.mine):checked ~ input[type="checkbox"]:not(.mine):checked ~ input[type="checkbox"]:not(.mine):checked ~ input[type="checkbox"]:not(.mine):checked ~ .message {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.game-board input[type="checkbox"].mine:checked ~ .message::before,
+.game-board input[type="checkbox"]:not(.mine):checked ~ input[type="checkbox"]:not(.mine):checked ~ input[type="checkbox"]:not(.mine):checked ~ input[type="checkbox"]:not(.mine):checked ~ input[type="checkbox"]:not(.mine):checked ~ input[type="checkbox"]:not(.mine):checked ~ input[type="checkbox"]:not(.mine):checked ~ .message::before {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.game-board input[type="checkbox"].mine:checked ~ .message::before {
+  content: "Ops! Perdeste!" !important;
+  background-color: rgba(255, 0, 0, 0.6) !important;
+}
+
+.game-board input[type="checkbox"]:not(.mine):checked ~ input[type="checkbox"]:not(.mine):checked ~ input[type="checkbox"]:not(.mine):checked ~ input[type="checkbox"]:not(.mine):checked ~ input[type="checkbox"]:not(.mine):checked ~ input[type="checkbox"]:not(.mine):checked ~ input[type="checkbox"]:not(.mine):checked ~ .message::before {
+  content: "Ganhaste!";
+  background-color: rgba(0, 255, 0, 0.6);
+}

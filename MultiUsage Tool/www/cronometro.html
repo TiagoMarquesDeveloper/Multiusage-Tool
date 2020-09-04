@@ -1,0 +1,82 @@
+<div class="pages">
+  <div data-page="shop" class="page no-toolbar no-navbar">
+    <div class="page-content">
+    
+     <div class="navbarpages">
+       <div class="navbar_left"><a href="index.html"><img src="images/icons/blue/menu.png" alt="" title="" /></a></div>
+       <div class="navbar_center"><h2><a href="index.html">MultiUsageTool</a></h2></div>
+     </div>
+     
+     <div id="pages_maincontent">
+      
+      <div class="shop_header_title">
+          <h2>Cronometro</h2>
+      </div>
+      
+      <div class="page_content">
+      
+	  <!-- Lets make a simple stopwatch using CSS3 -->
+<!-- Time for the markup -->
+<!-- The core logic is a simple div containing numbers being moved
+using keyframe animations. The numbers have space between them so that they
+can be aligned vertically easily by reducing the container width. Lets
+wrap up the 'numbers' in a cell to display only 1 digit-->
+
+<!-- We will replicate the digits now -->
+<div class="container">
+	<!-- time to add the controls -->
+	<input id="start" name="controls" type="radio" />
+	<input id="stop" name="controls" type="radio" />
+	<input id="reset" name="controls" type="radio" />
+	<div class="timer">
+		<div class="cell">
+			<div class="numbers tenhour moveten">0 1 2 3 4 5 6 7 8 9</div>
+		</div>
+		<div class="cell">
+			<div class="numbers hour moveten">0 1 2 3 4 5 6 7 8 9</div>
+		</div>
+		<div class="cell divider"><div class="numbers">:</div></div>
+		<div class="cell">
+			<div class="numbers tenminute movesix">0 1 2 3 4 5 6</div>
+		</div>
+		<div class="cell">
+			<div class="numbers minute moveten">0 1 2 3 4 5 6 7 8 9</div>
+		</div>
+		<div class="cell divider"><div class="numbers">:</div></div>
+		<div class="cell">
+			<div class="numbers tensecond movesix">0 1 2 3 4 5 6</div>
+		</div>
+		<div class="cell">
+			<div class="numbers second moveten">0 1 2 3 4 5 6 7 8 9</div>
+		</div>
+		<div class="cell divider"><div class="numbers">:</div></div>
+		<div class="cell">
+			<div class="numbers milisecond moveten">0 1 2 3 4 5 6 7 8 9</div>
+		</div>
+		<div class="cell">
+			<div class="numbers tenmilisecond moveten">0 1 2 3 4 5 6 7 8 9</div>
+		</div>
+		<div class="cell">
+			<div class="numbers hundredmilisecond moveten">0 1 2 3 4 5 6 7 8 9</div>
+		</div>
+	</div>
+			<!-- Lables for the controls -->
+			<div id="timer_controls">
+				<label for="start">Inicio</label>
+				<label for="stop">Pausa</label>
+				<label for="reset">Reset</label>
+			</div>
+		</div>
+
+		<!-- Lets load up prefixfree first -->
+		<script src="http://thecodeplayer.com/uploads/js/prefixfree.js" type="text/javascript"></script>
+		<!-- You can download it from https://leaverou.github.com/prefixfree/ -->
+      
+      </div>
+      
+      </div>
+      
+      
+    </div>
+  </div>
+</div>

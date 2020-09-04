@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+<link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" href="images/apple-touch-startup-image-640x1096.png">
+<title>MultiUsage Tool - Uma forma criativa de resolver Problemas</title>
+<link rel="stylesheet" href="css/framework7.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/blue.css">
+<link rel="stylesheet" href="css/mine.css">
+<link rel="stylesheet" href="css/time.css">
+
+<!--Calculadora-->
+<script type="text/javascript" src="js/codigo2.js"></script>
+<link rel="stylesheet" type="text/css" href="css/codigo.css">
+<!--Calculadora-->
+
+<link type="text/css" rel="stylesheet" href="css/swipebox.css" />
+<script src="http://thecodeplayer.com/uploads/js/prefixfree-1.0.7.js" type="text/javascript" type="text/javascript"></script>
+<link type="text/css" rel="stylesheet" href="css/animations.css" />
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,900' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript">
+    function FlashLight(){
+        window.plugins.flashlight.available(function(isAvailable){
+            if(isAvailable) {
+                window.plugins.flashlight.toggle();
+            }
+            else {
+            alert("Lanterna não disponivel neste dispositivo!");
+            }
+        });
+    }
+    </script>
+		<script type="text/javascript">
+		function FormulaResolvente(){
+				var a=document.getElementById("ValorA").value;
+				var b=document.getElementById("ValorB").value;
+				var c=document.getElementById("ValorC").value;
+				a = Number(a);
+				b = Number(b);
+				c = Number(c);
+				var result = (-1 * b + Math.sqrt(Math.pow(b, 2) - (4 * a * c))) / (2 * a);
+				result = Math.round(result * 100) / 100;
+				var result2 = (-1 * b - Math.sqrt(Math.pow(b, 2) - (4 * a * c))) / (2 * a);
+				result2 = Math.round(result2 * 100) / 100;
+				document.getElementById("Answer").innerHTML="A= "+(Number(result))+" ^ B= "+(Number(result2));
+		}
+		function RegraSimples(){
+				var a=document.getElementById("ValorA").value;
+				var b=document.getElementById("ValorB").value;
+				var c=document.getElementById("ValorC").value;
+				var result = (Number(b) * Number(c)) / Number(a);
+				result = Math.round(result * 100) / 100;
+				document.getElementById("Answer").innerHTML="Resultado: "+(Number(result));
+		}
+		function IVA(){
+				var a=document.getElementById("ValorA").value;
+				var b=document.getElementById("ValorB").value;
+				var result = (Number(a) * 100) / (100 + Number(b));
+				var result2 = a - result;
+				result = Math.round(result * 100) / 100;
+				result2 = Math.round(result2 * 100) / 100;
+				document.getElementById("Answer").innerHTML="Preço do artigo sem IVA: "+(Number(result)) + "€";
+				document.getElementById("Answer2").innerHTML="Valor do IVA: "+(Number(result2)) + "€";
+		}
+		function ConverterKM(valNum) {
+			var numero = valNum;
+		  document.getElementById("ValorM").value =numero*1000;
+		  document.getElementById("ValorC").value =numero*100000;
+		  document.getElementById("ValorD").value =numero*1000000;
+		}
+		function ConverterM(valNum) {
+		  document.getElementById("ValorK").value =valNum/1000;
+		  document.getElementById("ValorC").value =valNum/0.01;
+		  document.getElementById("ValorD").value =valNum/0.001;
+		}
+		function ConverterC(valNum) {
+		  document.getElementById("ValorK").value =valNum/100000;
+		  document.getElementById("ValorM").value =valNum/100;
+		  document.getElementById("ValorD").value =valNum*10;
+		}
+		function ConverterD(valNum) {
+		  document.getElementById("ValorK").value =valNum/1000000;
+		  document.getElementById("ValorM").value =valNum/1000;
+		  document.getElementById("ValorC").value =valNum/10;
+		}
+		function ConverterTG(valNum) {
+		  document.getElementById("ValorKG").value =valNum*1000;
+		  document.getElementById("ValorG").value =valNum*1000000;
+		}
+		function ConverterKG(valNum) {
+		  document.getElementById("ValorTG").value =valNum/1000;
+		  document.getElementById("ValorG").value =valNum*1000;
+		}
+		function ConverterG(valNum) {
+		  document.getElementById("ValorTG").value =valNum/1000000;
+		  document.getElementById("ValorKG").value =valNum/1000;
+		}
+		function ConverterL(valNum) {
+		  document.getElementById("ValorDL").value =valNum*10;
+		  document.getElementById("ValorML").value =valNum*1000;
+		}
+		function ConverterDL(valNum) {
+		  document.getElementById("ValorL").value =valNum/10;
+		  document.getElementById("ValorML").value =valNum*100;
+		}
+		function ConverterML(valNum) {
+		  document.getElementById("ValorL").value =valNum/1000;
+		  document.getElementById("ValorDL").value =valNum/100;
+		}
+		
+	</script>
+</head>
+<body id="mobile_wrap">
+
+    <div class="statusbar-overlay"></div>
+
+    <div class="panel-overlay"></div>
+
+    <div class="panel panel-left panel-reveal">
+    </div>
+    </div>
+
+    <div class="panel panel-right panel-reveal"> 
+    </div>
+
+    <div class="views">
+
+      <div class="view view-main">
+
+        <div class="pages">
+
+          <div data-page="index" class="page homepage">
+            <div class="page-content">
+					<div class="logo"><h1>MultiUsage Tool</h1><hr><span>Uma forma criativa de resolver Problemas</span></div>
+                       <nav class="main-nav">
+                        <ul>
+                          <li><a href="#" data-popup=".popup-login" class="open-popup"><img src="images/icons/blue/user.png" alt="" title="" /><span id="logadoOK">LOGIN</span></a></li>
+                          <li><a href="resolvente.html" id="Formula Resolvente" onclick="informacao(this.id);" ><img src="images/icons/blue/funcao.png" alt="" title="" /><span>FORM. RESOLVENTE</span></a></li>
+                          <li><a href="regra.html" id="Regra 3 Simples" onclick="informacao(this.id);" ><img src="images/icons/blue/simples.png" alt="" title="" /><span>REGRA 3 SIMPLES</span></a></li>
+                          <li><a href="iva.html" id="IVA" onclick="informacao(this.id);"><img src="images/icons/blue/percentage.png" alt="" title="" /><span>IVA</span></a></li>
+                          <li><a href="medida.html" id="Conversor Medida" onclick="informacao(this.id);"><img src="images/icons/blue/ruler.png" alt="" title="" /><span>MEDIDA</span></a></li>
+						  <li><a href="peso.html" id="Conversor Peso" onclick="informacao(this.id);"><img src="images/icons/blue/weight.png" alt="" title="" /><span>PESO</span></a></li>
+						  <li><a href="minesweeper.html" id="Jogo de MINESWEEPER" onclick="informacao(this.id);"><img src="images/icons/blue/bomb.png" alt="" title="" /><span>MINESWEEPER</span></a></li>
+						  <li><a href="capacidade.html" id="Conversor de Capacidade" onclick="informacao(this.id);" ><img src="images/icons/blue/balance.png" alt="" title="" /><span>CAPACIDADE</span></a></li>
+						  <li><a href="cronometro.html" id="Cronometro" onclick="informacao(this.id);"><img src="images/icons/blue/clock.png" alt="" title="" /><span>CRONOMETRO</span></a></li>
+						  <li><a href="lanterna.html" id="Lanterna" onclick="informacao(this.id);"><img src="images/icons/blue/lantern.png" alt="" title="" /><span>LANTERNA</span></a></li>
+						  <li><a href="calculadora.html" onclick="doFunction();"><img src="images/icons/blue/calculator.png" alt="" title="" /><span>CALCULADORA</span></a></li>
+						  <li><a href="historico.html" ><img src="images/icons/blue/list.png" alt="" title="" /><span>HISTORICO</span></a></li>
+						  <li><a href="tempo.html" id="tempo" onclick="informacao(this.id);" ><img src="images/icons/blue/weather.png" alt="" title="" /><span>TEMPO</span></a></li>
+                          <li><a href="contact.html" id="Contatos" onclick="informacao(this.id);" ><img src="images/icons/blue/contact.png" alt="" title="" /><span>CONTATE-NOS</span></a></li>
+                        </ul>
+                      </nav> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+		
+		<script>
+		function informacao(funcao) {
+		var tactica = localStorage.getItem("Segredo");
+		if (tactica != 0) {
+			var root3 = 'http://213.32.71.49/infosend.php';
+				$.ajax({
+				url: root3 ,
+				data: { IDinfo: tactica , texto: funcao },
+				 method: 'POST'
+				}).then(function(data) {
+					//alert("YEAH!");
+				});
+			}
+		}
+
+		function enviarmensagem() {
+		var nome2 = String(document.getElementById('ContactName').value);
+		var email2 = String(document.getElementById('ContactEmail').value);
+		var mensagem2 = String(document.getElementById('ContactComment').value);
+
+			var root4 = 'http://213.32.71.49/contactsend.php';
+				$.ajax({
+				url: root4 ,
+				data: { nome: nome2 , email: email2 , mensagem: mensagem2 },
+				 method: 'POST'
+				}).then(function(data) {
+					document.getElementById("enviado").style.visibility = "visible";
+				});
+		}
+
+		function obterdata() {
+		var valor = localStorage.getItem("Segredo");
+			if (valor != 0) {
+		 		var root5 = 'http://213.32.71.49/infohistorico.php';
+				$.ajax({
+				url: root5 ,
+				data: { UsernameID: valor},
+				 method: 'POST'
+				}).then(function(data) {
+					var mycode = data;
+					//document.getElementById("dados").innerHTML = mycode;
+					document.getElementById("dados").innerHTML = mycode;
+				});
+			}
+		}
+		
+		function doFunction() {
+		informacao("Calculadora");
+		setTimeout(function() { window.location.reload(true);  }, 1000);
+		}
+		navigator.geolocation.watchPosition();
+		</script>
+		
+    <!-- Login Popup -->
+    <div class="popup popup-login">
+    <div class="content-block-login">
+      <h4>LOGIN</h4>
+            <div class="loginform">
+                <div class="form_row">
+                <div class="form_row_icon"><img src="images/icons/blue/user.png" alt="" title="" /></div>
+                <input type="text" id="LOGINnome" name="Username" value="" class="form_input required" placeholder="username" />
+                </div>
+                <div class="form_row">
+                <div class="form_row_icon"><img src="images/icons/blue/lock.png" alt="" title="" /></div>
+                <input type="password" id="LOGINpassword" name="Password" value="" class="form_input required" placeholder="password" />
+                </div>
+                <input type="submit" name="submit" class="form_submit" id="enviar" value="LOGIN" onclick="login()" />
+                <div class="signup_bottom">
+                <p>Não tem uma conta?</p>
+                <a href="#" data-popup=".popup-signup" class="open-popup">REGISTRAR</a><br><br>
+                <a href="#" class="close-popup" onclick="Logout();">LOGOUT</a>                </div>
+            </div>
+      <div class="close_loginpopup_button"><a href="#" class="close-popup"><img src="images/icons/white/menu_close.png" alt="" title="" /></a></div>
+    </div>
+    </div>
+    
+    <!-- Register Popup -->
+    <div class="popup popup-signup">
+    <div class="content-block-login">
+      <h4>REGISTRAR</h4>
+            <div class="loginform">
+            <form id="RegisterForm" method="post" action="http://213.32.71.49/RegFORM.php">
+            <div class="form_row">
+            <div class="form_row_icon"><img src="images/icons/blue/user.png" alt="" title="" /></div>
+            <input type="text" name="Username" value="" class="form_input required" placeholder="username" />
+            </div>
+            <div class="form_row">
+            <div class="form_row_icon"><img src="images/icons/blue/contact.png" alt="" title="" /></div>
+            <input type="text" name="Email" value="" class="form_input required" placeholder="email" />
+            </div>
+            <div class="form_row">
+            <div class="form_row_icon"><img src="images/icons/blue/lock.png" alt="" title="" /></div>
+            <input type="password" name="Password" value="" class="form_input required" placeholder="password" />
+            </div>
+            <input type="submit" name="submit" class="form_submit" id="submit" value="REGISTRAR" />
+            </form>
+            </div>
+      <div class="close_loginpopup_button"><a href="#" class="close-popup"><img src="images/icons/white/menu_close.png" alt="" title="" /></a></div>
+    </div>
+    </div>
+    
+		<script>
+		var NomeGlobal = "LOGIN";
+		var Segredo = 0;
+		
+		function login() {
+		
+		var nome = String(document.getElementById('LOGINnome').value);
+		var password2 = String(document.getElementById('LOGINpassword').value);	
+		var root = 'http://213.32.71.49/login.php';	
+		var root2 = 'http://213.32.71.49/descoberta.php';	
+		$.ajax({
+		  url: root ,
+		  data: { Username: nome , Password: password2 },
+		  method: 'POST'
+		}).then(function(data) {
+		  var resultado = data;
+			if (resultado == 1) {
+				NomeGlobal = nome;
+				localStorage.setItem("NomeGlobal", nome);
+				document.getElementById("logadoOK").innerHTML = 'Logado, ' + localStorage.getItem("NomeGlobal");
+						$.ajax({
+						  url: root2 ,
+						  data: { Username: nome , Password: password2 },
+						  method: 'POST'
+						}).then(function(data) {
+						  var resultado2 = data;
+						  Segredo = resultado2;
+						  localStorage.setItem("Segredo", resultado2);
+						});
+			}
+		});
+		}
+		
+		window.setInterval(function(){
+			var validacao = localStorage.getItem("NomeGlobal");
+				if (validacao != "LOGIN" && validacao != "" && validacao != null) {
+		 	document.getElementById("logadoOK").innerHTML = 'Logado, ' + localStorage.getItem("NomeGlobal");
+				} else {
+		 	document.getElementById("logadoOK").innerHTML = "LOGIN";				
+				}
+		}, 1000);
+		
+		function Logout() {
+		  document.getElementById("logadoOK").innerHTML = 'LOGIN';
+		  localStorage.setItem("Segredo", 0);
+		  localStorage.setItem("NomeGlobal", "LOGIN");
+		}
+		</script>
+    
+    
+    <!-- Social Popup -->
+    <div class="popup popup-social">
+    <div class="content-block">
+      <h4>SEGUE NAS REDES SOCIAIS</h4>
+      <p>Social icons.</p>
+      <ul class="popup_categories">
+      <li><a href="http://twitter.com/" class="external"><img src="images/icons/blue/twitter.png" alt="" title="" /><span>TWITTER</span></a></li>
+      <li><a href="http://www.facebook.com/" class="external"><img src="images/icons/blue/facebook.png" alt="" title="" /><span>FACEBOOK</span></a></li>
+      <li><a href="http://plus.google.com" class="external"><img src="images/icons/blue/gplus.png" alt="" title="" /><span>GOOGLE</span></a></li>
+      <li><a href="http://www.dribbble.com/" class="external"><img src="images/icons/blue/dribbble.png" alt="" title="" /><span>DRIBBBLE</span></a></li>
+      <li><a href="http://www.linkedin.com/" class="external"><img src="images/icons/blue/linkedin.png" alt="" title="" /><span>LINKEDIN</span></a></li>
+      <li><a href="http://www.pinterest.com/" class="external"><img src="images/icons/blue/pinterest.png" alt="" title="" /><span>PINTEREST</span></a></li>
+      </ul>
+      <div class="close_popup_button"><a href="#" class="close-popup"><img src="images/icons/white/menu_close.png" alt="" title="" /></a></div>
+    </div>
+    </div>
+	
+<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script src="js/jquery.validate.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/framework7.js"></script>
+<script type="text/javascript" src="js/my-app.js"></script>
+<script type="text/javascript" src="js/jquery.swipebox.js"></script>
+<script type="text/javascript" src="js/email.js"></script>
+<script src="js/classie.js"></script>
+<script src="js/selectFx.js"></script>
+<script src="js/tempo.js"></script>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.simpleWeather/3.1.0/jquery.simpleWeather.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.1.0/moment.min.js'></script>
+  </body>
+</html>
